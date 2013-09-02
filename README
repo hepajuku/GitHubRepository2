@@ -3,8 +3,8 @@ Maven Vaadin framework project
 
 Running maven project:
 
-Install maven with instructions found http://maven.apache.org/download.cgi.
-Download project from GitHub with Git Shell. In Git Hub shell go for example to directory c:/repo and use command "git clone git://github.com/hepajuku/GitHubRepository2.git".
-Open cmd.exe and navigate to c:/repo/GitHubRepository2 and use command "mvn clean install" to build project. After building use command "mvn jetty:run". Open internet browser and go to page http://localhost:8080 to run program.
+Install maven with instructions found at http://maven.apache.org/download.cgi.
+Download project from GitHub with Git Shell. In Git shell go for example to directory c:/repo and use command "git clone git://github.com/hepajuku/GitHubRepository2.git".
+Open cmd.exe and navigate to c:/repo/GitHubRepository2 and use command "mvn install" to build project. After building use command "mvn jetty:run". Open internet browser and go to page http://localhost:8080 to run program.
 
-This version cant connect to database maybe because jetty cant find postgreSQL jdbc driver.
+This version cant yet connect to database maybe because jetty cant find postgreSQL jdbc driver.
