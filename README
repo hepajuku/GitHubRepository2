@@ -47,7 +47,7 @@ Now go to your repositorys target directory for example c:\repo\GitHubRepository
 PostgreSQL server requirements
 ------------------------------
 
-In postgreSQL database you need to have database called mydatabase and there one table called job_applications with columns first_name (character(100 length)), last_name (character(100 length)), gender (character(20 length)) and application (character(1000 length)). You also need user "admin" as superuser with "1234" password to mydatabase. Easiest way is to use pgAdmin III program to do that.
+In postgreSQL database you need to have database called mydatabase and there one table called job_applications with columns first_name (character(100 length)), last_name (character(100 length)), gender (character(20 length)) and application (character(1000 length)). You should also make Primary key that uses all columns first_name, last_name, gender and application to maintain data uniqueness. You also need user "admin" as superuser with "1234" password to mydatabase. Easiest way is to use pgAdmin III program to do that.
 
 
 Application design
