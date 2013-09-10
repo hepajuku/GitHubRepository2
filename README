@@ -26,8 +26,8 @@ ________
 |______|
 
 
-Compiling maven project:
-------------------------
+Compiling maven project
+-----------------------
 
 Install maven with instructions found at http://maven.apache.org/download.cgi.
 Download project from GitHub with Git Shell. In Git shell go for example to directory c:\repo and use command "git clone git://github.com/hepajuku/GitHubRepository2.git".
@@ -40,7 +40,23 @@ Running in Tomcat 7
 -------------------
 
 You need to download Apache Tomcat 7 from http://tomcat.apache.org/download-70.cgi. Extract it to some directory for example c:\Tomcat 7\. Then you need to download postgresql jdbc driver from 
-http://jdbc.postgresql.org/download/postgresql-9.2-1003.jdbc4.jar and put it to tomcat 7 lib directory for example to c:\tomcat 7\lib directory.
+http://jdbc.postgresql.org/download/postgresql-9.2-1003.jdbc4.jar and put it to tomcat 7 lib directory for example to c:\tomcat 7\lib directory. Also you need to make changes to c:\Tomcat 7\webapps\manager\WEB-INF\web.xml file. Change max-file-size and max-request-size
+
+<multipart-config>
+<!– 50MB max –>
+<max-file-size>52428800</max-file-size>
+<max-request-size>52428800</max-request-size>
+<file-size-threshold>0</file-size-threshold>
+</multipart-config>
+
+to bigger values to allow over 50 MB file sized .war files used in server. Change them for example to:
+
+<multipart-config>
+<!– 50MB max –>
+<max-file-size>90428800</max-file-size>
+<max-request-size>90428800</max-request-size>
+<file-size-threshold>0</file-size-threshold>
+</multipart-config>
 
 Now go to your repositorys target directory for example c:\repo\GitHubRepository2\target and copy Project-LATEST.war file to your tomcat 7 webapps directory for example c:\tomcat 7\webapps. In commandline navigate to your tomcat bin directory for example c:\tomcat 7\bin and use command "startup" to start tomcat 7 server. Open internet browser and go to page http://localhost:8080/Project-LATEST to see the result. You can close tomcat server by pressing Ctrl+c in Tomcats commandline.
 
