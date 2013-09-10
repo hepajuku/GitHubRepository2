@@ -1,10 +1,50 @@
 Maven Vaadin framework project
 ------------------------------
 
+Project is a web application that asks users first name, last name, gender and why are you applying to this job? After writin asked information user presses "Send" button and application sends data to postgreSQL database.
+Web application should look like this:
+
+First name
+________________
+|              |
+|______________|
+Last name
+________________
+|              |
+|______________|
+Gender
+O Male
+O Female
+Why are you applying to this job?
+______________________
+|                    |
+|                    |
+|                    |
+|____________________|
+________
+| Send |
+|______|
+
+
 Running maven project:
+----------------------
 
 Install maven with instructions found at http://maven.apache.org/download.cgi.
 Download project from GitHub with Git Shell. In Git shell go for example to directory c:/repo and use command "git clone git://github.com/hepajuku/GitHubRepository2.git".
-Open cmd.exe and navigate to c:/repo/GitHubRepository2 and use command "mvn install" to build project. After building use command "mvn jetty:run". Open internet browser and go to page http://localhost:8080 to run program.
+Open cmd.exe and navigate to c:/repo/GitHubRepository2 and use command "mvn install" to build project. After building use command "mvn jetty:run". Open internet browser and go to page http://localhost:8080 to see the result.
 
-This version cant yet connect to database maybe because jetty cant find postgreSQL jdbc driver.
+This version can't yet connect to database maybe because jetty can't find postgreSQL jdbc driver.
+
+
+PostgreSQL server requirements
+------------------------------
+
+In postgreSQL database you need to have database called mydatabase and there one table called job_applications with columns first_name (character(100 length)), last_name (character(100 length)), gender (character(20 length)) and application (character(1000 length)). You also need user "admin" as superuser with "1234" password to mydatabase. Easiest way is to use pgAdmin III program to do that.
+
+
+Application design
+------------------
+
+I tried to design application so that vaadin gui, listener, data and sql connection are in different classes.
+
+ProjectUI handles user interface, MyButtonListener gets users inputs from ProjectUI and stores input data to JobApplication and checks if input is ok. Also sends information to database through JobApplication if all is ok. JobApplication stores user inputs and sends data to database in a proper form. SQLConnection makes a connection to database and sends data into it and finally closes the connection.
