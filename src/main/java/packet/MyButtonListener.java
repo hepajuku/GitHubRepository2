@@ -34,11 +34,11 @@ public class MyButtonListener implements Button.ClickListener {
 	}
 	
 	/**
-	 * @param fname TextField to First name
-	 * @param lname TextField to Last name
-	 * @param gndr OptionGroup to Gender
-	 * @param appl TextArea to application
-	 * @param someLayout Layout to used layout
+	 * @param fname TextField First name
+	 * @param lname TextField Last name
+	 * @param gndr OptionGroup Gender
+	 * @param appl TextArea application
+	 * @param someLayout Layout layout
 	 */
 	public void importComponents(TextField fname, TextField lname, OptionGroup gndr, TextArea appl, Layout someLayout) {
 		fName = fname;
