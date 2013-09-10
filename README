@@ -26,15 +26,23 @@ ________
 |______|
 
 
-Running maven project:
-----------------------
+Compiling maven project:
+------------------------
 
 Install maven with instructions found at http://maven.apache.org/download.cgi.
-Download project from GitHub with Git Shell. In Git shell go for example to directory c:/repo and use command "git clone git://github.com/hepajuku/GitHubRepository2.git".
-Open cmd.exe and navigate to c:/repo/GitHubRepository2 and use command "mvn install" to build project. After building use command "mvn jetty:run". Open internet browser and go to page http://localhost:8080 to see the result.
+Download project from GitHub with Git Shell. In Git shell go for example to directory c:\repo and use command "git clone git://github.com/hepajuku/GitHubRepository2.git".
+Open commandline cmd.exe and navigate to c:\repo\GitHubRepository2 and use command "mvn install" to build project. After building use command "mvn jetty:run". Open internet browser and go to page http://localhost:8080 to see the result. You can close jetty server by pressing Ctrl+c in commandline and pressing y and enter.
 
-This version can't yet connect to database maybe because jetty can't find postgreSQL jdbc driver.
+Running like this the application can't connect to a database maybe because jetty can't find a postgreSQL jdbc driver. But you can test that program looks how it should look like.
 
+
+Running in Tomcat 7
+-------------------
+
+You need to download Apache Tomcat 7 from http://tomcat.apache.org/download-70.cgi. Extract it to some directory for example c:\Tomcat 7\. Then you need to download postgresql jdbc driver from 
+http://jdbc.postgresql.org/download/postgresql-9.2-1003.jdbc4.jar and put it to tomcat 7 lib directory for example to c:\tomcat 7\lib directory.
+
+Now go to your repositorys target directory for example c:\repo\GitHubRepository2\target and copy Project-LATEST.war file to your tomcat 7 webapps directory for example c:\tomcat 7\webapps. In commandline navigate to your tomcat bin directory for example c:\tomcat 7\bin and use command "startup" to start tomcat 7 server. Open internet browser and go to page http://localhost:8080/Project-LATEST to see the result. You can close tomcat server by pressing Ctrl+c in Tomcats commandline.
 
 PostgreSQL server requirements
 ------------------------------
